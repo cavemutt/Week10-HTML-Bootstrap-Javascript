@@ -1,0 +1,36 @@
+// declare custom variable overrides
+$primary:#320FFA;
+$secondary: #7889F5;
+$danger: #3DF2D7;
+$warning:#027373;
+$info:#A76DF2;
+$body-bg: #250b42;
+$body-color: #151515;
+$light:#e5e0f6;
+
+// ***below didn't work(above works fine), needs research
+// to add your own custom variables
+// 1. create your own color theme map
+// 2. import the scss functions and variables files from bootstrap in this order
+// 3. merge custom theme map with original bootstrap theme map, overriding the original $theme-colors map
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors: (
+    "altlight": #c4ebf8,
+    "altdark": #33a9d1,
+    // Martina theme from https://color.adobe.com/explore
+    "courseWool": #172026,
+    "blueRadiance": #5FCDD9,
+    "natural-instinct-green": #027373,
+    "turquoise": #04BFAD,
+    "aareRiver": #04BF9D
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+// import bootstrap to customize bootstrap variables
+@import '../node_modules/bootstrap/scss/bootstrap'
+
+// the !default sass statement after each bootstrap variable 

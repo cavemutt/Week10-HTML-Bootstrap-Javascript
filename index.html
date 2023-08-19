@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- logo for browser tab -->
+    <link rel="icon" type="image/png" href="./logos/jcacmLogo400.png"> 
+<!-- instead of linking straight to the bootstrap styles, they are imported into the below css file via sass in order to customize variables -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link href="./css/style.min.css" rel="stylesheet">
+<!-- regular css file -->
+    <link href="./style.css" rel="stylesheet">
+<!-- regular script.js file, type module also includes 'defer' attribute -->
+    <script src="./script.js" type="module"></script>
+    <title>Magic Cat</title>
+</head>
+<body class="text-blueRadiance text-center">
+<!-- fixed header of Baz, an original digital painting of mine, also found in Baz's Beat Maker app -->
+    <header class="fixed-top">
+        <div id="img-container">
+            <div id="dark"></div>
+            <img src="./assets/body-only.png" alt="cat body" id="cat-body">
+            <img src="./assets/eye-left.png" alt="cat eyes" class="eye eye-left">
+            <img src="./assets/eye-right.png" alt="cat eyes" class="eye eye-right">
+            <img src="./assets/head-no-eyes.png" alt="watching cat head" id="cat-head-watching">
+            <img src="./assets/head-squinty.png" alt="cool cat head" id="cat-head-cool">
+            <img src="./assets/hat.png" alt="magic hat" id="hat">
+            <img src="./assets/crystal-ball.png" alt="crystal ball" id="ball">
+<!-- for some reason I cannot get ::before or ::after pseudo elements to work with bootstrap, I stopped looking for an answer and used a div -->
+            <div id="gradient"></div>
+        </div>
+    </header>
+<!-- intro section with a combo of bootstrap and vanilla effects  -->
+    <section id="intro">
+        <h1>Hello...and Welcome</h1>
+        <h2>I am Baz, a feline of Magical abilities.</h2>
+        <div class="row justify-content-center my-5" id="form">
+            <div class="col-lg-6">
+<!-- Here's the smallest form in recent form history. Enjoy. -->
+                <form class="px-2 placeholder-wave placeholder-glow">
+                    <label for="name" id="name-label" class="form-label pt-5">Please enter your name...</label>
+                    <input type="text" class="fs-2 pt-2 pb-5 placeholder form-control text-blueRadiance text-bold text-center" id="name-input" placeholder="e.g. Baz Jackson Wachowski" aria-label="Full Name" aria-describedby="name-label">
+<!-- I was originally going to use a ChatGPT api but my credits expired and I'm poor right now -->
+                    <!-- <div class="form-floating my-5">
+                        <textarea name="goals" id="goals" cols="30" rows="10" class="placeholder form-control" style="height: 140px" aria-label="Your goals" aria-describedby="goals-label"></textarea>
+                        <label for="goals" id="goal-label" class="text-blueRadiance text-bold">Ask Baz a question...</label>
+                    </div> -->
+                    <div class="pt-5 text-center">
+                        <a href="#main-section" id="submit-btn" role="button" type="submit" class="btn text-blueRadiance border-blueRadiance text-bold">Submit to the Feline Mystic</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+<!-- Main section for what's going on here -->
+    <section id="main-section">
+        <h3 class="fs-2 pt-5 pb-4">To know the answer, one must know oneself.</h3>
+        <h3 class="fst-italic text-info fs-4">The best way to predict the future<br>is to create it.<br><small class="fs-6">- Abraham Lincoln</small></h3>
+        <p class="display-6 text-center text-turquoise pt-5 fst-italic">Baz has seen you...</p>
+<!-- I only used a table here bc I needed a table for the assignment. Bootstrap's "table-responsive" just make overflowX: auto. I would prefer it go vertical on smaller screens. -->
+        <div class="table-responsive" id="table">
+            <table class="table table-secondary">
+                <thead class="table-warning">
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">IP Address</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Latitude/Longitude</th>
+                    <th scope="col">Time/Timezone</th>
+                    <th scope="col">Current Temp</th>
+                  </tr>
+                </thead>
+                <tbody>
+<!-- initially set things up here then created it in the js file -->
+                  <!-- <tr> -->
+                    <!-- <td id="user-name">name</td>
+                    <td id="ip">&#9729<small><br><span id="is-VPN"></span></small></td>
+                    <td id="loc">&#9729</td>
+                    <td id="lat">&#9729</td>
+                    <td id="time">&#9729</td>
+                    <td id="weather">&#9729</td>
+                  </tr> -->
+                </tbody>
+              </table>
+
+        </div>
+
+    </section>
+
+    
+</body>
+</html>
+
+<!-- project links -->
+<!-- https://youtu.be/mGwptoizWAI -->
+<!-- https://github.com/cavemutt/Week10-HTML-Bootstrap-Javascript.git -->
